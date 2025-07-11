@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha página Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="cabecalho">
+    <h1>🚀 Conhecendo os serviços da AWS ☁️ </h1>
+    <img src="assets/top.gif" alt="AWS Cloud Animation" class="header-gif">
+    </header>
+
+<div class="container-principal">
+    <nav class="navegacao">
+        <input type="text" id="pesquisa" placeholder="🔍 Pesquisar serviços..." onkeyup="pesquisar(this.value)">
+        <select id="filtro" onchange="filtrarPorCategoria(this.value)">
+            <option value="todos">Todas as categorias</option>
+            <option value="Armazenamento">Armazenamento</option>
+            <option value="Computação">Computação</option>
+            <option value="Banco de Dados">Banco de Dados</option>
+            <option value="Serverless">Serverless</option>
+            <option value="Orquestração">Orquestração</option>
+            <option value="Rede">Rede</option>
+            <option value="Segurança">Segurança</option>
+            <option value="Mensageria">Mensageria</option>
+            <option value="Monitoramento">Monitoramento</option>
+        </select>
+    </nav>
+
+<main class="conteudo-principal">
+    <!-- Cards serão gerados dinamicamente pelo JavaScript -->
+</main>
+
+</div>
+
+<footer class="rodape">
+    <p>&copy; 2025 Minha página Flexbox. Todos os direitos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

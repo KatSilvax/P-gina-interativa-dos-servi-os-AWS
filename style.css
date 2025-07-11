@@ -1,0 +1,144 @@
+/* Reset basico  e estilos gerais */
+body { /* Body como Flex Container: */
+    font-family: sans-serif;
+    margin: 0;
+    display: flex; /* Torna o body um flex container com direção em coluna */
+    flex-direction: column; /* Organiza os filhos (header, container-principal, footer) em coluna */
+    min-height:100vh; /* Garante que o body ocupe pelo menos toda a altura da tela */
+    background-color:orange ; 
+}
+
+.cabecalho { /* Estilo para o cabeçalho */
+    background-color: #e07918;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #cfb9b9; /* Linha inferior para o cabeçalho */
+}
+
+.cabecalho h1 { /* Título dentro do cabeçalho */
+    margin: 0;
+    color: #0a100d;
+}
+
+.header-gif {
+    width: 250px;
+    height: 100px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* dividindo a tela horizontalmente em duas partes: a navegação (coluna esquerda) e a área principal de conteúdo (direita). */
+.container-principal { /* Onde fica meus links e cards */
+    display: flex; /* Ativa o Flexbox para este container */
+    flex-direction: row; /* Altero o fluxo para que a navegação fique à direita */
+    flex-grow: 1; /* Faz este container crescer para ocupar o espaço disponível no body */
+
+}
+
+.navegacao { /* Aqui eu estilizo a navegação */
+    background-color: #dea12e; /* Cor de fundo da navegação */
+    width: 200px; /* Largura fixa para a navegação */
+    padding: 15px; /* Espaçamento interno */
+    border-right: 2px solid #e1e6da; /* Linha direita para a navegação */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#pesquisa {
+    margin-bottom: 10px;
+}
+
+.navegacao ul  { /* Lista de links de navegação */
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 1; /* Remove o padding padrão */
+    
+
+}
+
+.navegacao ul li { /* Estilo para cada item da lista de navegação */
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+}
+
+.navegacao ul li a { /* Estilo para os links de navegação */
+    text-decoration:none; /* Remove o sublinhado dos links */
+    color: #133e69; /* Cor do link */
+    padding: 5px; /* Espaçamento interno para os links */
+    display: block; /* Faz o link ocupar toda a largura do item da lista */
+}
+
+.navegacao ul li a:hover { /* Efeito ao passar o mouse sobre o link */
+    color: #b92088; /* Cor do link ao passar o mouse */
+    text-decoration: underline; /* Sublinha o link ao passar o mouse */
+}
+
+/* Área de conteúdo principal que segura os cards */
+.conteudo-principal {
+   background-color: #ffffff; /* fundo para a área de conteúdo */
+   padding: 20px;
+   flex-grow: 1; /*Faz a área de conteúdo crescer para ocupar o espaço restante no .container-principal */
+   display: flex; /* Ativa o Flexbox para este container */
+   flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha se não couberem */
+   gap: 30px; /* Espaçamento entre os cards */
+   align-content: flex-start; /* Alinha os cards no início do container */
+   justify-content: center;
+}
+
+.card { /* Estilo para os cards */ 
+    background-color: #ea9c16; /* Cor de fundo dos cards */
+    border: 10px solid #e2d4d4; /* Borda dos cards */
+    padding: 15px; /* Espaçamento interno dos cards */
+    width: 350px; /* Largura fixa para os cards */
+    height: 250px; /* Altura fixa para os cards */
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card small {
+    color: #666;
+    font-style: italic;
+}
+
+.card-image {
+    width: 80px;
+    max-width: 100px;
+    display: block;
+    margin: 10px auto;
+}
+
+.card h2 { /* Título dentro do card */
+    margin-top: 0;
+    color: #333;
+}
+
+.card p { /* Parágrafo dentro do card */
+    color: #363333;
+    font-size: 0.9em;
+
+}
+
+.rodape {
+    background-color: #ea9c16;
+    padding: 15px; /* Espaçamento interno do rodapé */
+    text-align: center;
+    border-top: 2px solid #5e5b57; /* Linha superior*/
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .container-principal {
+        flex-direction: column;
+    }
+    
+    .navegacao {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #e1e6da;
+    }
+}
+
+
