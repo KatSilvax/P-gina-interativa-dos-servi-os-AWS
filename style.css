@@ -79,15 +79,15 @@ body { /* Body como Flex Container: */
    flex-grow: 1; /*Faz a área de conteúdo crescer para ocupar o espaço restante no .container-principal */
    display: flex; /* Ativa o Flexbox para este container */
    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha se não couberem */
-   gap: 30px; /* Espaçamento entre os cards */
+   gap: 50px; /* Espaçamento entre os cards */
    align-content: flex-start; /* Alinha os cards no início do container */
    justify-content: center;
 }
 
 .card { /* Estilo para os cards */ 
-    background-color: #ea9c16; /* Cor de fundo dos cards */
+    background-color: lightblue; /* Cor de fundo dos cards */
     border: 10px solid #e2d4d4; /* Borda dos cards */
-    padding: 15px; /* Espaçamento interno dos cards */
+    padding: 10px; /* Espaçamento interno dos cards */
     width: 350px; /* Largura fixa para os cards */
     height: 250px; /* Altura fixa para os cards */
     border-radius: 8px;

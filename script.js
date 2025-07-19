@@ -11,37 +11,51 @@ const servicos = [
     { id: 9, nome: "Amazon SNS", categoria: "Mensageria", descricao: "Serviço de notificação", icone: "📢", imagem: "assets/sns.png" },
     { id: 10, nome: "Amazon SQS", categoria: "Mensageria", descricao: "Fila de mensagens", icone: "📬", imagem: "assets/sqs1.png" },
     { id: 11, nome: "Amazon CloudWatch", categoria: "Monitoramento", descricao: "Monitoramento de recursos", icone: "📈", imagem: "assets/cw.png" },
+    { id: 12, nome: "Amazon", categoria: "Monitoramento", descricao: "Monitoramento de recursos", icone: "📈", imagem: "assets/cw.png" },
+    { id: 13, nome: "Amazon bedrock", categoria: "Monitoramento", descricao: "Monitoramento de recursos", icone: "📈", imagem: "assets/cw.png" },
 ];
 
+
+
 // Função para renderizar cards
+
 function renderizarCards(dados = servicos) {
-    const container = document.querySelector('.conteudo-principal');
+    const container = document.querySelector('.conteudo-principal'); // Seleciona o container onde os cards serão renderizados
     container.innerHTML = dados.map(servico => `
         <div class="card">
             <h2>${servico.icone} ${servico.nome}</h2>
-            ${servico.imagem ? `<img src="${servico.imagem}" alt="Logo ${servico.nome}" class="card-image">` : ''}
-            <p>${servico.descricao}</p>
+            ${servico.imagem ? `<img src="${servico.imagem}" alt="Logo ${servico.nome}" class="card-image">` : ''}  
             <small>Categoria: ${servico.categoria}</small>
         </div>
-    `).join('');
+        
+    `).join('');  // Gera o HTML dos cards a partir dos dados
+
+    
+    
 }
 
-// Função de pesquisa
 function pesquisar(termo) {
     const filtrados = servicos.filter(servico => 
-        servico.nome.toLowerCase().includes(termo.toLowerCase()) ||
+        servico.nome.toLowerCase().includes(termo.toLowerCase()) ||  // pesquisa por nome tanto maisculo quanto minúsculo
         servico.categoria.toLowerCase().includes(termo.toLowerCase()) ||
         servico.descricao.toLowerCase().includes(termo.toLowerCase())
     );
     renderizarCards(filtrados);
 }
 
+
 // Função de filtro por categoria
-function filtrarPorCategoria(categoria) {
+function filtrarPorCategoria(categoria) {  
     const filtrados = categoria === 'todos' ? servicos : 
         servicos.filter(servico => servico.categoria === categoria);
     renderizarCards(filtrados);
 }
+
+function toggleImagens() {  // função de esconder 
+    const mostrar = document.getElementById("toggle-imagens").checked;
+    document.querySelectorAll(".card small").forEach(el => 
+        el.style.display = mostrar ? 'block' : 'none')}
+
 
 // Inicializar quando a página carregar
 document.addEventListener('DOMContentLoaded', () => {
